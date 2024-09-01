@@ -39,7 +39,13 @@ console.log(sumOfBalance)
 // Завдання 2
 // Масив імен всіх користувачів у яких є друг із зазначеним ім'ям.
 
-const checkFriends = users.filter(user => user.friend === 'Masha').map(user => user.name)
+const checkFriends = users.reduce((array, names) => { 
+	if (names.friend === 'Masha') { 
+		array.push(names.name)
+	}
+	return array;
+}, [])
+
 console.log(checkFriends)
 
 // Завдання 3
